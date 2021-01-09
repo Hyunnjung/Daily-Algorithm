@@ -23,4 +23,3 @@
 8. 그래프이론
 
 
-[hyun](https://github.com/Hyunnjung)
