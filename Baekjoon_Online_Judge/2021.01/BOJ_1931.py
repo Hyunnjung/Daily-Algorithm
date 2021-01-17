@@ -1,5 +1,5 @@
-# Baekjoon Online Judge : 모두의 마블
-# DATE : 2020.01.16
+# Baekjoon Online Judge : 회의실배정
+# DATE : 2020.01.17
 # Greedy 알고리즘
 
 
