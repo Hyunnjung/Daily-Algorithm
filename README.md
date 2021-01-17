@@ -6,7 +6,7 @@
 
 
 ### 2. Programmers
-- [2021.01](Daily-Algorithm/Programmers/2021.01/)
+- [Greedy](Programmers/Greedy/)
 
 
 ### 3. etc
