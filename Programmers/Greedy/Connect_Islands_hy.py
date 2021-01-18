@@ -1,5 +1,5 @@
-# programmers L3 : 단속카메라
-# DATE : 2020.01.13
+# programmers L3 : 섬 연결하기
+# DATE : 2020.01.18
 # Greedy 알고리즘
 
 # Kruskal 알고리즘
@@ -18,47 +18,37 @@
 # ⇨ 간선(1, 2) 추가 ⇨ [{1, 2, 5}, {3}, {4}]
 
 
+
+
+def solution(n, costs):
+    answer = 0
+    costs.sort(key = lambda x: x[2]) # 비용기준 오름차순
+    connection = [costs[0][0]] # 가장 비용작은 섬(노드) 넣음/ connection : 방문 확인하는 리스트
+    while len(connection) != n:
+        for i, cost in enumerate(costs):
+            # 반복문을 돌면서 섬 확인
+            # 이미 두 노드가 존재함 -> 넘어감
+            if (cost[0] in connection) and (cost[1] in connection): continue
+            # 둘 중 하나만 connection에 있을 경우 -> answer에 비용더해줌, connection에 해당 섬에 대한 정보 추가
+            if (cost[0] in connection) or (cost[1] in connection):
+                answer += cost[2]
+                connection.append(cost[0])
+                connection.append(cost[1])
+                connection = list(set(connection)) # 중복제거
+                costs.pop(i)
+                break
+    return answer
+
+
 # Union-Find 란 Disjoint Set 을 표현할 때 사용하는 독특한 형태의 자료구조로,
 #    공통 원소가 없는, 즉 "상호 배타적" 인 부분 집합 들로 나눠진 원소들에 대한 정보를 저장하고 조작하는 자료구조
 #    입니다.
 # 위의 상황을 표현하기 위해서는 초기화 과정과 다음과 같은 두 가지 연산을 지원해야 하기 때문에, Union-Find 자료구조 라고 부르게 되었다고 합니다.
+
+
 
 # Union-Find 지원 연산
 # 초기화 : N 개의 원소가 각각의 집합에 포함되어 있도록 초기화 합니다.
 # Union (합치기) 연산 : 두 원소 a, b 가 주어질 때, 이들이 속한 두 집합을 하나로 합칩니다.
 # Find (찾기) 연산 : 어떤 원소 a 가 주어질 때, 이 원소가 속한 집합을 반환합니다.
 # https://gmlwjd9405.github.io/2018/08/28/algorithm-mst.html
-
-def solution(n, costs):
-    answer = 0
-    costs.sort(key=lambda x: x[2]) # 비용기준으로 오름차순 정렬
-    bridge = []
-
-    for i in range(n): # 섬의 개수만큼 집합 만들어줌
-        bridge.append({i})
-
-# 사이클이 형성되지 않도록 간선 선택
-    # temp1, temp2 집합을 만듦
-    for i in costs:
-        temp1 = set()
-        temp2 = set()
-        # bridge for문 돌며 각 원소가 집합 안에 들어있는지 확인
-        # 서로 다른 집합 안에 있으면 합침
-        # 집합의 개수가 1개가 되면 반복문을 빠져나옴
-        for j in bridge:
-            if i[0] in j:
-                temp1 = j
-            if i[1] in j:
-                temp2 = j
-        if temp1 == temp2:
-            continue
-        else:
-            bridge.remove(temp1)
-            bridge.remove(temp2)
-            bridge.append(temp1 | temp2)
-            answer += i[2]
-            if len(bridge) == 1:
-                break
-
-    return answer
-print(solution(4, [[0, 1, 1], [0, 2, 3], [1, 2, 1], [1, 3, 1], [2, 3, 8]]))
