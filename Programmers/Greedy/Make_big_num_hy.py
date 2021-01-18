@@ -19,7 +19,7 @@ def solution(number, k):
             # 값을 한개 빼서 k-1
             stack.pop()
             k -= 1
-        # 새로운 값을 삽입
+        #  값을 삽입
         stack.append(num)
     # 만일 충분히 제거하지 못했으면 남은 부분은 단순하게 삭제
     # 이미 큰 수부터 앞에서 채워넣었기 때문

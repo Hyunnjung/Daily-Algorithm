@@ -27,7 +27,7 @@
 import heapq
 N = int(input())
 time = [list(map(int, input().split())) for i in range(N)]
-li = []
+li = [] # 강의실
 
 # 강의를 빨리 시작하는 순서대로 정렬
 time.sort(key=lambda  x:x[0])

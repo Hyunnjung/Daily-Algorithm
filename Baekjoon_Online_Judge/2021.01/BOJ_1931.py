@@ -12,14 +12,14 @@ N = int(input())
 times = [list(map(int, input().split())) for i in range(N)]
 times.sort(key=lambda x:(x[1],x[0])) # 끝나는 시간으로 우선 정렬, 시간 같을경우 시작시간으로 정렬
 end = times[0][1]
-room = 1
+meeting = 1
 
 for time in times[1:]:
     if end <= time[0]:
         end = time[1]
-        room += 1
+        meeting += 1
 
-print(room)
+print(meeting)
 
 
 # 시간이 오래 걸림
