@@ -3,18 +3,16 @@
 # DATE : 2020.01.22
 
 
-m=[]
-for i in range(20) :
-    m.append([])
-for j in range(20) :
-    m[i].append(0)
+m = [[0]*19 for i in range(19)]
 
-n=int(input())
-for i in range(n) :
-    x,y=input().split()
-    m[int(x)][int(y)]=1
-for i in range(1, 20) :
-    for j in range(1, 20) :
-        print(m[i][j], end=' ')
-        print()
+a = int(input())
+for i in range(a):
+    b,c = map(int,input().split())
+    m[b-1][c-1] = 1
+
+for i in range(19):
+    for j in range(19):
+        print(m[i][j], end = ' ')
+    print() # 리스트 안에 요소 출력
+
 
