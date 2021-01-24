@@ -1,0 +1,8 @@
+ 
+# Programmers SQL L1: 동물의 아이디와 이름
+# Date : 2021.01.24
+# SELECT
+
+SELECT ANIMAL_ID, NAME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID ASC;
