@@ -1,0 +1,8 @@
+# Programmers SQL : 역순 정렬하기
+# Date : 2021.01.24
+# SELECT
+
+
+SELECT NAME, DATETIME
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID DESC;
