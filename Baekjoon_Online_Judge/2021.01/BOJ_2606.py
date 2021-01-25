@@ -19,7 +19,7 @@ def bfs(virus_map, start):
     visited = []
 
     while queue: # 큐 안에 원소들이 없어질 떄까지 반복
-        temp = queue.pop(0) # 큐의 첫번째 원소 꺼냄
+        temp = queue.pop(0)
         visited.append(temp)
 
         for i in range(len(virus_map)): # 해당 원소와 연결된, 아직 방문하지 않은 원소들을 큐에 삽입

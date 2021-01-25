@@ -20,7 +20,7 @@ def dfs(begin, target, words):
         for word in words:
             # 한 개의 알파벳만 다른 경우
             if word not in visited and len([i for i in range(len(word)) if n[i] != word[i]]) == 1:
-                stack.append(word)
+                stack.append(word) # 스택에 추가
 
     return len(visited)
 

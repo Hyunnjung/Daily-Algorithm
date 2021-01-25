@@ -20,7 +20,7 @@ def solution(n, computers):
 
     while 0 in visited: # vistied 리스트의 모든 값에 방문 표시가 되어있을 때까지 반복
         x = visited.index(0)
-        bfs.append(x)
+        bfs.append(x) # 큐에 첫 노드 추가
         visited[x] = 1  # 첫 노드 방문표시
 
         while bfs: # 큐의 값이 존재하면 반복문 수행
@@ -29,7 +29,7 @@ def solution(n, computers):
             for i in range(n): # 꺼낸 노드의 인접 노드를 방문하기 위한 반복문 수행
                 if visited[i] == 0 and computers[node][i] == 1:  # 인접 노드이고, 방문된 적 없는 경우
                     bfs.append(i) # 큐에 추가
-                    visited[i] = 1
-        answer += 1
+                    visited[i] = 1 # 방문했음 표시
+        answer += 1 # 한 네트워크의 탐색을 마치면 개수 추가
     return answer
 
