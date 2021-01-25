@@ -1,0 +1,8 @@
+# Programmers SQL L1: 상위 n개 레코드
+# Date : 2021.01.24
+# SELECT
+
+SELECT NAME
+FROM ANIMAL_INS
+WHERE DATETIME = (SELECT MIN(DATETIME)
+                 FROM ANIMAL_INS);
