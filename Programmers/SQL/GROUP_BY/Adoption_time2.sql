@@ -1,6 +1,6 @@
 # Programmers SQL L4: 입양 시각 구하기2
 # Date : 2021.01.26
-# GROUP BY
+# GROUP BY 
 
 
 SELECT A.HOUR, COUNT(B.DATETIME) AS COUNT
