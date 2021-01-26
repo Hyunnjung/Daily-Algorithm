@@ -1,0 +1,6 @@
+# Programmers SQL L2: 동물 수 구하기
+# Date : 2021.01.26
+# SUM, MAX, MIN
+
+SELECT COUNT(ANIMAL_ID) AS COUNT
+FROM ANIMAL_INS
