@@ -1,0 +1,6 @@
+# Programmers SQL L1: 최댓값 구하기
+# Date : 2021.01.26
+# SUM, MAX, MIN
+
+SELECT MAX(DATETIME) AS 시간
+FROM ANIMAL_INS;
