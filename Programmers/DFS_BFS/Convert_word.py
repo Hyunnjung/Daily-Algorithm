@@ -12,7 +12,6 @@ def dfs(begin, target, words):
         n = stack.pop()
         if n == target:
             break
-
         if n not in visited:
             visited.append(n)
         print(visited)

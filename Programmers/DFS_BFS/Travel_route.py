@@ -2,15 +2,24 @@
 # DATE : 2020.01.24
 # DFS
 
+import time
+start=time.time()
 # 가야하는 다음 경로 : stack.top을 시작점으로 하는 끝점들을 역순으로 저장하는 리스트의 가장 마지막 원소
 def solution(tickets):
     routes = {} # 딕셔너리 구성
     for t in tickets: # 출발지:도착지 dic만듦
-        if t[0] not in routes.keys():
-            routes[t[0]] = [t[1]]
-        else:
-            routes[t[0]] = [t[1]]
-    for r in routes.keys(): # 딕셔너리 돌면서 항공권 리스트 역순 정렬/ pop()대비해 알파벳순서대로 뽑히도록
+        routes[t[0]] = routes.get(t[0], []) + [t[1]]
+#
+#     if t[0] not in routes.keys():
+#         routes[t[0]] = [t[1]]
+#     else:
+#         routes[t[0]] = [t[1]]
+# # icn : s,
+# # s : a
+# a : s,
+# st =
+    # 가야하는 다음 경로 : stack.top을 시작점으로 하는 끝점들을 역순으로 저장하는 리스트의 가장 마지막 원소
+    for r in routes.keys(): # 딕셔너리 돌면서 항공권 역순 정렬
         routes[r].sort(reverse=True)
     stack = ['ICN']
     path = []
@@ -22,3 +31,5 @@ def solution(tickets):
             path.append(stack.pop())
 
     return path[::-1] # path 거꾸로 돌림(스택은 선입후출이기때문)
+
+print("time :", time.time() - start)
