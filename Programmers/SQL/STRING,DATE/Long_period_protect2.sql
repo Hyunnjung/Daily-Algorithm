@@ -1,4 +1,4 @@
-# Programmers SQL L2: 오랜 기간 보호한 동물2
+# Programmers SQL L3: 오랜 기간 보호한 동물2
 # Date : 2021.01.28
 # STRING,DATE
 
