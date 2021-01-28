@@ -1,0 +1,16 @@
+# Programmers SQL L2: DATETIME에서 DATE로 형 변환
+# Date : 2021.01.28
+# STRING,DATE
+
+#ORACLE
+SELECT ANIMAL_ID , NAME,
+      TO_CHAR(DATETIME, 'YYYY-MM-DD') AS "날짜"
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+
+#MYSQL
+SELECT ANIMAL_ID, NAME, DATE_FORMAT(DATETIME, '%Y-%m-%d') AS 날짜 
+FROM ANIMAL_INS
+
+DATE_FORMAT(DATE,형식) 
+%Y(4자리 연도), %y(2자리 연도), %m(월), %d(일), %H(24시간), %h(12시간), %i, %s
