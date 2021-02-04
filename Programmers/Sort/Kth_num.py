@@ -9,3 +9,10 @@ def solution(array, commands):
         array2.sort()
         answer.append(array2[command[2]-1])
     return answer
+
+
+def solution2(array, commands):
+    answer = []
+    for i, j, k in commands:
+        answer.append(list(sorted(array[i-1:j]))[k-1])
+    return answer
