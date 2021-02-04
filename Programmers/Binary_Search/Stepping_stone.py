@@ -8,7 +8,6 @@
 #   n보다 작거나 같을 경우 거리를 늘림
 
 import math
-
 def solution(distance, rocks, n):
     rocks.sort()
     rocks.append(distance)

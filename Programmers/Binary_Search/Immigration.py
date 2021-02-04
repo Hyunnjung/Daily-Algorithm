@@ -16,6 +16,7 @@ def solution(n, times):
             count += mid // times[i]
 
         # mid 시간동안 처리한 심사 인원 수가 n보다 크거나 같으면 end 변경
+        # 한 심사관의 처리시간을 줄임
         if count >= n:
             answer = mid
             end = mid - 1
